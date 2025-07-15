@@ -34,4 +34,11 @@ public class OrdereController {
         orderService.delterOrder(orderId);
         System.out.println("Order deleted successfully: "+orderId);
     }
+
+    @GetMapping("/{orderId}")
+    public Ordered getOrder(@PathVariable Integer orderId) throws Exception {   
+        Ordered order = orderService.getOrder(orderId);
+        System.out.println("Order fetched successfully: "+order);
+        return order;
+    }
 }

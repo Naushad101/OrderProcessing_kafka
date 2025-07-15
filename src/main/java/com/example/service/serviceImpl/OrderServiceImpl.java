@@ -59,4 +59,13 @@ public class OrderServiceImpl implements OrderService {
             }
         });
     }
+    @Override
+    public Ordered getOrder(Integer orderId) throws Exception {
+        Optional<Ordered> optionalOrder = orderRepository.findById(orderId);
+        if (optionalOrder.isPresent()) {
+            return optionalOrder.get();
+        } else {
+            throw new Exception("Order not found with id: " + orderId);
+        }
+    }
 }
