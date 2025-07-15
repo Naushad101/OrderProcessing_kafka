@@ -3,7 +3,9 @@ package com.example.controller;
 import com.example.entity.Ordered;
 import com.example.service.OrderService;
 import com.example.service.serviceImpl.OrderServiceImpl;
-import org.hibernate.query.Order;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ public class OrdereController {
 
     @Autowired
     OrderService orderService;
+    Logger logger = org.slf4j.LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @PostMapping
     public String saveOrdered(@RequestBody Ordered ordered){
@@ -39,6 +42,8 @@ public class OrdereController {
     public Ordered getOrder(@PathVariable Integer orderId) throws Exception {   
         Ordered order = orderService.getOrder(orderId);
         System.out.println("Order fetched successfully: "+order);
+        System.out.println("==============================");
+        logger.info("Order fetched successfully: {}", order);
         System.out.println("==============================");
         return order;
     }
