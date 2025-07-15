@@ -39,6 +39,7 @@ public class OrdereController {
     public Ordered getOrder(@PathVariable Integer orderId) throws Exception {   
         Ordered order = orderService.getOrder(orderId);
         System.out.println("Order fetched successfully: "+order);
+        System.out.println("==============================");
         return order;
     }
 }
