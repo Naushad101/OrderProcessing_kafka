@@ -1,0 +1,20 @@
+#spring:
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer:
+#         serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#    consumer:
+#      group-id: order-group
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring.json.trusted.packages: com.example.orderprocessing.model
+#    streams:
+#      application-id: order-streams
+#      bootstrap-servers: localhost:9092
+#      properties:
+#        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+#        default.value.serde: org.springframework.kafka.support.serializer.JsonSerde
+#        spring.json.trusted.packages: com.example.orderprocessing.model
