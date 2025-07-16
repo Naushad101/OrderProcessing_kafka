@@ -44,6 +44,8 @@ public class OrderServiceImpl implements OrderService {
         Ordered ordered = new Ordered();
         ordered.setOrderId(orderId);
         String key = String.valueOf(orderId);
+        System.out.println("Deleting order with ID: " + orderId);
+        ordered.setStatus("DELETED");
         CompletableFuture<SendResult<String, Ordered>> future = kafkaTemplate.send("orderDel", key, ordered);
         logPartition(future, key, "orderDel");
     }

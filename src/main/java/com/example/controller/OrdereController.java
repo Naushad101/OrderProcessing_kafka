@@ -29,6 +29,8 @@ public class OrdereController {
     @PutMapping
     public String updateOrder(@RequestBody Ordered order) throws Exception {
         orderService.updateOrder(order);
+        logger.info("Order updated successfully: {}", order);
+        System.out.println("Order updated successfully: "+order);
         return "updated successfully....";
     }
 
