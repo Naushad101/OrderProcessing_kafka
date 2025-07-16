@@ -23,14 +23,13 @@ public class OrdereController {
         System.out.println(ordered);
         System.out.println("==============================");
         orderService.saveOrder(ordered);
-        return "Order created successfully with id: "+ordered.getOrderId();
+        logger.info("Order saved on feature-branch: {}", ordered.getOrderId());
+        return "Order created successfully with ID: "+ordered.getOrderId();
     }
 
     @PutMapping
     public String updateOrder(@RequestBody Ordered order) throws Exception {
         orderService.updateOrder(order);
-        logger.info("Order updated successfully: {}", order);
-        System.out.println("Order updated successfully: "+order);
         return "updated successfully....";
     }
 
