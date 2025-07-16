@@ -84,6 +84,5 @@ volumes:
   kafka_data:
   zookeeper_data:
   zookeeper_logs:
-
 networks:
   app-postgres-net:
