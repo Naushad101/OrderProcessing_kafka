@@ -24,7 +24,7 @@ public class OrdereController {
         System.out.println("==============================");
         orderService.saveOrder(ordered);
         logger.info("Order saved on feature-branch: {}", ordered.getOrderId());
-        return "Order created successfully with ID: "+ordered.getOrderId();
+        return "Order created successfully with Id: "+ordered.getOrderId();
     }
 
     @PutMapping
