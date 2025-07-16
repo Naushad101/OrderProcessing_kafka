@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 public interface OrderService {
     public void saveOrder(Ordered ordered);
     public void updateOrder(Ordered ordered) throws Exception;
-    public void delterOrder(Integer orderId) throws Exception;
+    public void deleterOrder(Integer orderId) throws Exception;
     public Ordered getOrder(Integer orderId) throws Exception;
 }

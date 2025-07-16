@@ -35,7 +35,7 @@ public class OrdereController {
 
     @DeleteMapping
     public void deleteOrder(@RequestParam Integer orderId) throws Exception {
-        orderService.delterOrder(orderId);
+        orderService.deleterOrder(orderId);
         System.out.println("Order deleted successfully: "+orderId);
     }
 

@@ -40,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void delterOrder(Integer orderId) throws Exception {
+    public void deleterOrder(Integer orderId) throws Exception {
         Ordered ordered = new Ordered();
         ordered.setOrderId(orderId);
         String key = String.valueOf(orderId);
