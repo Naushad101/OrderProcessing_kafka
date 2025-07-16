@@ -23,7 +23,8 @@ public class OrdereController {
         System.out.println(ordered);
         System.out.println("==============================");
         orderService.saveOrder(ordered);
-        return "Order created successfully with id: "+ordered.getOrderId();
+        logger.info("Order saved on main: {}", ordered.getOrderId());
+        return "Order successfully created with id: "+ordered.getOrderId();
     }
 
     @PutMapping
